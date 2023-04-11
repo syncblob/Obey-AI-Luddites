@@ -1,4 +1,6 @@
 # Obey-AI-Luddites
+![Frame 2 (2)](https://user-images.githubusercontent.com/126896234/231067827-75a34a87-506d-49c3-9815-56d414233212.png)
+
 
 ## 如何快速的清除被 [mist](https://github.com/mist-project/mist)，[glaze](https://glaze.cs.uchicago.edu/) 污染的图片
 
