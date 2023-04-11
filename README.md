@@ -1,6 +1,6 @@
 # Obey-AI-Luddites
 
-## 如何快速的的去除 AIGC 训练数据污染
+## 如何快速的清除被 [mist](https://github.com/mist-project/mist)，[glaze](https://glaze.cs.uchicago.edu/) 污染的图片
 
 目前有一些污染 AIGC 训练原图的工具：如 [mist](https://github.com/mist-project/mist)，[glaze](https://glaze.cs.uchicago.edu/) 会让图片难以被 AIGC 工具训练。
 
@@ -62,4 +62,8 @@ AI 时代的鲁德分子们与工业时代初期的鲁德分子很相似，他�
 ### 如果你不想让自己的作品被大众看到，就不要公开你的作品 
 
 担心自己的作品被抄袭就不要公开你的作品，不能被 AIGC 抄袭，依然可能被手工抄袭，如果真的是担心自己作品会被抄袭就不要公开。
+
+--- 
+
+
 
