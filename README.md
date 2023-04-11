@@ -19,7 +19,7 @@
 
 1. [安装 imagemagick](https://imagemagick.org/script/download.php)
 
-3. 下载并解压本仓库
+2. 下载并解压本仓库
 
 3. 把被污染的图片放到 mist 文件夹下
 
@@ -66,4 +66,51 @@ AI 时代的鲁德分子们与工业时代初期的鲁德分子很相似，他�
 --- 
 
 
+## How to quickly remove images contaminated by [mist](https://github.com/mist-project/mist) or [glaze](https://glaze.cs.uchicago.edu/) 
 
+There are currently tools such as [mist](https://github.com/mist-project/mist) and [glaze](https://glaze.cs.uchicago.edu/) that contaminate original images used for AIGC training, making it difficult for AIGC tools to train properly.
+
+This creates trouble for ordinary people (who are not familiar with machine learning or coding) when they try to train their own models.
+
+While these tools cannot stop professionals (who can easily remove these watermarks using machine learning methods), they do hinder ordinary people, which is absurd. Therefore, this project provides simple methods for ordinary people to clean up contaminated images.
+
+## Usage
+
+For ordinary people, using [imagemagick](https://imagemagick.org/script/download.php) to perform some simple processing on the images can be effective in dealing with these contaminations. Although this may result in a slight loss of image quality, it is acceptable considering the watermarking methods such as [mist](https://github.com/mist-project/mist) which already have a large number of traces visible in the visible domain.
+
+
+1. [Install imagemagick.](https://imagemagick.org/script/download.php)
+
+2. Download and extract this repository.
+
+3. Put the contaminated images into the mist folder.
+
+4. Open the terminal or command line in the root directory of the repository, and run the following command:
+ 
+  ```bash
+magick ./mist/*.png  -resize 800x800 ./clean/%d.jpg
+magick ./clean/*.jpg +noise Uniform -enhance -enhance -despeckle ./clean2/%d.jpg
+magick ./clean2/*.jpg  -enhance  -resize 400x400 ./clean3/%d.jpg
+magick ./clean3/*.jpg   -sharpen 4  -resize  512x512 ./cleanDone/%d.png
+
+```
+
+5. The cleaned images will be located in the cleanDone directory.
+
+
+##  The Significance of this Project
+### Preventing the public from training AIGC models on public data is bad for everyone
+Some people with a "naive" sense of intellectual property believe that training AIGC models with public data is harmful to themselves and needs to be stopped. They believe that by contaminating the data, they can protect the skill value of the creators.
+
+But in fact, this not only fails to stop the development of AIGC, but also harms every existing creator and future possible new creators. This is because AIGC tool vendors have the technical ability to easily remove these polluted watermarks, while ordinary people do not have the ability to use them. This will actually promote the monopoly of large companies on AIGC models, increase the cost of providing new technology to the public, and ultimately harm the interests of the masses, especially the poor!
+
+### Do Not Foster Monopolies by Large Companies
+In fact, large companies are even more eager to have strict copyright restrictions, preferably with harsh penalties prohibiting public data training.
+This way, the public and small companies will not have the ability (capital) to train their own AIGC models, and only large companies can purchase commercial materials and hire training set creators to launch monopolistic AIGC products.
+Their costs will eventually be transferred to every consumer. In the end, AIGC will still impact old-era creators, but without open products that confront large companies. This is the worst possible future.
+
+### Do Not Put Your Emotions on a Moral High Ground
+The rude elements of the AI era are very similar to those in the early days of the industrial era. They think that destroying machines can stop the arrival of the industrial era, but with the emergence of new productivity, the original production relations will inevitably need to be changed. Resisting new changes will not stop the historical process. This spirit is not a problem, and society is not static. There will be various collisions of ideas, which is good. But please do not put this behavior on a moral high ground to criticize others, as it is absurd and meaningless. Because other people will also have various reasons to use morals to criticize you, this is purely emotional.
+
+### If You Don't Want Your Work to be Seen by the Public, Don't Make it Public
+If you are worried about your work being plagiarized, do not make it public. It can still be plagiarized by hand even if it cannot be copied by AIGC. If you are really worried that your work will be plagiarized, don't make it public.
